@@ -1,0 +1,136 @@
+/* =============== NAVBAR ================ */
+.navbar{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo{cursor: pointer;}
+.logo svg{
+	width: 3rem;
+	height: 3rem;
+	fill: white;
+	margin: 1rem;
+	transition: all 200ms linear;
+}
+.logo svg:hover{
+	fill: var(--light-pink);
+}
+
+/* menu icon */
+.menu-icon {
+	height: 2rem;
+	width: 2rem;
+	cursor: pointer;
+	margin: 1rem;
+}
+.menu-icon__line {
+	height: 3px;
+	width: 2rem;
+	background-color: #fff;
+	display: block;
+	margin-bottom: 0.5rem;
+	cursor: pointer;
+
+	-webkit-transition: background-color .5s ease, -webkit-transform .2s ease;
+	transition: background-color .5s ease, -webkit-transform .2s ease;
+	transition: transform .2s ease, background-color .5s ease;
+	transition: transform .2s ease, background-color .5s ease, -webkit-transform .2s ease;
+}
+.menu-icon__line-left {
+	width: 1rem;
+
+	-webkit-transition: all 200ms linear;
+	transition: all 200ms linear;
+}
+.menu-icon__line-right {
+	width: 1rem;
+	float: right;
+
+	-webkit-transition: all 200ms linear;
+	-moz-transition: all 200ms linear;
+	-o-transition: all 200ms linear;
+	-ms-transition: all 200ms linear;
+	transition: all 200ms linear;
+}
+.menu-icon:hover .menu-icon__line-left,
+.menu-icon:hover .menu-icon__line-right {
+	width: 2rem;
+}
+
+
+
+/* =============== OVERLAY ================ */
+
+/* The Overlay (background) */
+.overlay {
+	/* Height & width depends on how you want to reveal the overlay (see JS below) */   
+	height: 100%;
+	width: 0;
+
+	position: fixed; /* Stay in place */
+	z-index: 100; /* Sit on top */
+	left: 0;
+	top: 0;
+	overflow-x: hidden; /* Disable horizontal scroll */
+	transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+
+	background-color: #100f10fc;
+}
+  
+/* Position the content inside the overlay */
+.overlay-content {
+	position: relative;
+	top: 25%; /* 25% from the top */
+	width: 100%; /* 100% width */
+	text-align: center; /* Centered text/links */
+	margin-top: 2rem; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+  
+/* The navigation links inside the overlay */
+.overlay a {
+	padding: 0.5rem;
+	text-decoration: none;
+	font-size: 1.6rem;
+	color: #818181;
+	display: block; /* Display block instead of inline */
+	transition: 0.3s; /* Transition effects on hover (color) */
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.overlay a span{
+	margin-left: 1rem;
+}
+  
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover, .overlay a:focus {
+	color: white;
+}
+  
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+	position: absolute;
+	top: 1rem;
+	right: 2rem;
+	font-size: 3rem;
+}
+
+
+/* =============== RESPONSIVE ================ */
+/* -------Small screens ------ */
+@media only screen and (max-width: 600px) {
+	.logo svg{
+		width: 2.5rem;
+		height: 2.5rem;
+	}
+
+	.overlay a {font-size: 1.1rem}
+	.overlay .closebtn {
+	  font-size: 2rem;
+	}
+}
+
+

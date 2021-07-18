@@ -1,0 +1,100 @@
+*{
+	box-sizing: border-box;
+}
+
+:root{
+	font-size: 16px;
+	font-family: 'Open Sans';
+
+	--dark-black : #121013;
+	--light-pink : #F12849;
+	--light-blue : #1CC5DC;
+}
+
+
+body{
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	text-decoration: none;
+}
+
+.lofi-cover{
+	border: 0.5rem solid white;
+}
+
+#lofi{
+	min-height: 98vh;
+
+	display: flex;
+	flex-direction: column;
+
+
+	background-image: url('/static/lofibg.jpg');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	border-radius: 5px;
+
+
+}
+
+
+/* =========== MAIN CONTENT =========== */
+.main-content{
+
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	color: white;
+
+	flex: 1;  /* 1 and it will fill whole space left if no flex value are set to other children*/
+	overflow: auto;
+}
+
+.lofi-name{
+	width: 75%;
+	text-align: center;
+}
+
+.lofi-name span{
+	font-weight: 500;
+	font-size: 1rem;
+	user-select:none;
+}
+
+#tgl{
+    position: absolute;
+    left: 50%;
+	top: 50%;
+	transform: translate(-1.5rem, -1.5rem);
+}
+
+#tgl svg{
+	user-select: none;
+	fill: white;
+	width: 3rem;
+	height: 3rem;
+}
+
+.toggler{
+	display: none;
+}
+
+
+/* =============== RESPONSIVE ================ */
+/* -------Small screens ------ */
+@media only screen and (max-width: 600px) {
+	.lofi-name span{
+		font-size: 0.8rem;
+	}
+}
+
+

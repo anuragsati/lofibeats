@@ -1,0 +1,37 @@
+<nav class="navbar">
+	<a href="/" class="logo">
+		<svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M37 4H13C8.03906 4 4 8.03516 4 13V37C4 41.9648 8.03906 46 13 46H37C41.9609 46 46 41.9648 46 37V13C46 8.03516 41.9609 4 37 4ZM35 27V31.0195H34.9961C34.9844 33.7695 32.75 36 30 36H29.5C28.5117 36 27.5664 35.5781 26.9023 34.8477C26.2422 34.1172 25.918 33.1289 26.0156 32.1445C26.1953 30.3789 27.7852 29 29.6445 29H31C32.1016 29 33 28.1016 33 27V17.2031L21 19.4531V34C21 36.7578 18.7578 39 16 39H15.5C14.5117 39 13.5664 38.5781 12.9023 37.8477C12.2422 37.1172 11.918 36.1289 12.0156 35.1445C12.1953 33.3789 13.7852 32 15.6445 32H17C18.1016 32 19 31.1016 19 30V15.3516C19 14.3906 19.6875 13.5625 20.6328 13.3867L33.2227 11.0273C33.6641 10.9453 34.1133 11.0586 34.457 11.3477C34.8047 11.6328 35 12.0547 35 12.5V27Z" />
+		</svg>
+	</a>
+
+	<div class="menu-icon" onclick="openNav()">
+			<span class="menu-icon__line menu-icon__line-left"></span>
+			<span class="menu-icon__line"></span>
+			 <span class="menu-icon__line menu-icon__line-right"></span>
+	</div>
+</nav>
+
+<!-- overlay -->
+<div id="myNav" class="overlay">
+
+	<!-- Button to close the overlay navigation -->
+	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  
+	<!-- Overlay content -->
+	<div class="overlay-content">
+		<a href="/">
+			<span>HOME</span>
+		</a>
+		<a href="/lofi">
+			<span>JOIN PARTY</span>
+		</a>
+		<a href="/about">
+			<span>ABOUT</span>
+		</a>
+		<a href="mailto:contact@lofibeats.com">
+			<span>CONTACT</span>
+		</a>
+	</div>
+  
+</div>

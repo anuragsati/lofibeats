@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>lofibeats | home</title>
+
+	<link rel="stylesheet" href="/static/css/mainpage.css">
+	<link rel="stylesheet" href="/static/css/navbar-overlay.css">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<div class="mainpage-cover">
+		<div id="mainpage">
+
+			<%- include('./partials/navbar-overlay.ejs') %>
+
+			<div class="main-content">
+				<div class="lofibeats">
+				<span class="text-pink">L</span>OFI<span class="text-blue">B</span>EATS
+				</div>
+				<div class="lofibeats-subtext">MUSIC THAT MAKES YOU WORK</div>
+				<div class="join-now-wrapper">
+					<a class="join-now" href="/lofi">JOIN NOW</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="/static/js/navbar-overlay.js"></script>
+</body>
+</html>
