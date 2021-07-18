@@ -10,7 +10,7 @@
 <!-- PROJECT LOGO -->
 <p align="center">
   <a href="https://lofibeat.herokuapp.com/">
-	<img src="./preview/logo.svg">
+	<img src="./preview/logo.svg" />
   </a>                      
 
   <h2 style="margin: 0" align="center">lofibeats</h2>
@@ -103,19 +103,19 @@ Anurag sati : anuragsati7@gmail.com
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[contributors-shield]: https://img.shields.io/github/contributors/anuragsati/music-genre-classifier.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/anuragsati/lofibeats.svg?style=for-the-badge
 [contributors-url]: https://github.com/anuragsati/lofibeats/graphs/contributors
 
-[forks-shield]: https://img.shields.io/github/forks/anuragsati/music-genre-classifier.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/anuragsati/lofibeats.svg?style=for-the-badge
 [forks-url]: https://github.com/anuragsati/lofibeats/network/members
 
-[stars-shield]: https://img.shields.io/github/stars/anuragsati/music-genre-classifier.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/anuragsati/lofibeats.svg?style=for-the-badge
 [stars-url]: https://github.com/anuragsati/lofibeats/stargazers
 
-[issues-shield]: https://img.shields.io/github/issues/anuragsati/music-genre-classifier.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/anuragsati/lofibeats.svg?style=for-the-badge
 [issues-url]: https://github.com/anuragsati/lofibeats/issues
 
-[license-shield]: https://img.shields.io/github/license/anuragsati/music-genre-classifier.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/anuragsati/lofibeats.svg?style=for-the-badge
 [license-url]: https://github.com/anuragsati/lofibeats/blob/main/LICENSE
 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
