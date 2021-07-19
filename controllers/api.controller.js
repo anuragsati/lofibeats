@@ -26,19 +26,35 @@ for(let i=0; i<songs.length; ++i){
 }
 
 
+
+// ======================
+var lofiNumber = 0;
+
 function getRandomLofi(){
-	return Math.floor(Math.random() * songs.length);
+	// making sure it doesnot generate same no.
+	let generatedLofiNumber= Math.floor(Math.random() * data.length);
+	if(generatedLofiNumber === lofiNumber)
+		generatedLofiNumber = (generatedLofiNumber+1)%(data.length);
+	
+	lofiNumber = generatedLofiNumber;
 }
 
 
 const getLofiData = (req, res) => {
-	res.send(data[getRandomLofi()]);
+	// setting it here bcz of callback it will be called first
+	getRandomLofi();
+	// console.log(lofiNumber)
+
+	res.send(data[lofiNumber]);
 }
 
 const getLofi  = (req, res) => {
+	// console.log(lofiNumber)
+	// console.log("==============")
+
 	// server random lofi
 	res.writeHead(200, {'Content-Type': 'audio/mp3'});
-	let opStream = fs.createReadStream(path.join(__dirname, '/public/lofi/' + data[getRandomLofi()].lofi_url));
+	let opStream = fs.createReadStream(path.join(__dirname, '/public/lofi/' + data[lofiNumber].lofi_url));
 	opStream.pipe(res)
 };
 
