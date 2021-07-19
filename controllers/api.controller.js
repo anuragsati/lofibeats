@@ -2,7 +2,6 @@ import path from 'path';
 import fs from 'fs';
 const __dirname = path.resolve();
 
-let lofiNumber = -1;
 
 //get lofi data
 let songs = fs.readdirSync(path.join(__dirname, '/public/lofi'));
@@ -27,16 +26,19 @@ for(let i=0; i<songs.length; ++i){
 }
 
 
+function getRandomLofi(){
+	return Math.floor(Math.random() * songs.length);
+}
+
+
 const getLofiData = (req, res) => {
-	res.send(data[lofiNumber]);
+	res.send(data[getRandomLofi()]);
 }
 
 const getLofi  = (req, res) => {
-	//change lofi whenever /lofi is called
-	lofiNumber = (lofiNumber+1) % data.length;
-
+	// server random lofi
 	res.writeHead(200, {'Content-Type': 'audio/mp3'});
-	let opStream = fs.createReadStream(path.join(__dirname, '/public/lofi/' + data[lofiNumber].lofi_url));
+	let opStream = fs.createReadStream(path.join(__dirname, '/public/lofi/' + data[getRandomLofi()].lofi_url));
 	opStream.pipe(res)
 };
 

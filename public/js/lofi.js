@@ -1,42 +1,59 @@
-const toggleButton = document.getElementById('tgl');
 const audio = document.getElementById('audio');
-const lofiElement = document.getElementById('lofi');
-const maincContent = document.getElementsByClassName('main-content')[0];
 const lofiName = document.getElementById('lofi-name');
+const animationLines = document.getElementsByClassName('line');
 
-window.onload = function() {
-	lofiElement.style.opacity = 0.9;
+function playPauseShuffle(){
 
-	setAudio();
-};
+	// play audio if it is paused
+	if(audio.paused)
+		audio.play();
+	else
+		audio.pause();
 
-maincContent.addEventListener('click', function(e){
-	audio.play();
 
-	if(audio.muted){
-		lofiElement.style.opacity = 1;
+	// show pause button when audio is playing and vice versa
+	if(audio.paused){
+		document.getElementsByClassName('play-button')[0].style.display = "inline-block";
+		document.getElementsByClassName('pause-button')[0].style.display = "none";
 	}
 	else{
-		lofiElement.style.opacity = 0.9;
+		document.getElementsByClassName('play-button')[0].style.display = "none";
+		document.getElementsByClassName('pause-button')[0].style.display = "inline-block";
 	}
 
-	toggleButton.classList.toggle('toggler');
-	audio.muted = !(audio.muted);
-});
+	//when paused stop animation 
+	for(let i=0; i<5; ++i){
+		if(audio.paused)
+			animationLines[i].style.animationPlayState = "paused";
+		else
+			animationLines[i].style.animationPlayState = "running";
+	}
+
+};
 
 audio.addEventListener("ended", function(){
-	setAudio();
-	console.log("ended");
+	getAudio();
 });
 
-function setAudio(){
+
+//get audio from backend and play it (which audio to play is defined on backend we just call that endpoint to get audio url)
+function getAudio(){
 	audio.src = '/api/lofi';
 
-	fetch('/api/lofidata')
-	.then(res => res.json())
-	.then(data =>{
-		console.log(data);
-		lofiName.innerHTML = data.name;
+	axios.get('/api/lofidata')
+	.then(res =>{
+		console.log(res.data);
+		lofiName.innerHTML = res.data.name;
 	});
+
+}
+
+
+function closeInitialOverlay(){
+	document.getElementById('initial-overlay').style.display = "none";
+
+	//when we close overlay set audio and play it
+	getAudio();
+	audio.play();
 
 }

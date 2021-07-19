@@ -6,36 +6,66 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>lofibeats | about</title>
 
-	<link rel="stylesheet" href="/static/css/lofi.css">
-	<link rel="stylesheet" href="/static/css/navbar-overlay.css">
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<link rel="stylesheet" href="/static/css/lofi.css">
+	<link rel="stylesheet" href="/static/css/navbar-overlay.css">
+
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
 </head>
 
 <body>
+
+	<div id="initial-overlay">
+		<div class="Card">
+			<div>
+				<h2>Welcome to lofibeats!</h2>
+				<p>
+					Plug in your earphones and enjoy.
+				</p>
+
+				<button class="continue-button" onclick="closeInitialOverlay()">Continue</button>
+			</div>
+		</div>
+	</div>
+	  
 	<div class="lofi-cover">
 		<div id="lofi">
 
 			<%- include('./partials/navbar-overlay.ejs') %>
 
 			<div class="main-content">
-				<div id="tgl" class="">
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-						<path d="M6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06zM6 5.04 4.312 6.39A.5.5 0 0 1 4 6.5H2v3h2a.5.5 0 0 1 .312.11L6 10.96V5.04zm7.854.606a.5.5 0 0 1 0 .708L12.207 8l1.647 1.646a.5.5 0 0 1-.708.708L11.5 8.707l-1.646 1.647a.5.5 0 0 1-.708-.708L10.793 8 9.146 6.354a.5.5 0 1 1 .708-.708L11.5 7.293l1.646-1.647a.5.5 0 0 1 .708 0z"/>
-					</svg>
-				</div>
 				<div class="lofi-name">
 					<span id="lofi-name"></span>
 				</div>
+
+				<div class="music">
+					<span class="line line1"></span>
+					<span class="line line2"></span>
+					<span class="line line3"></span>
+					<span class="line line4"></span>
+					<span class="line line5"></span>
+				</div>
+
+				<div class="controls">
+					<i onclick="playPauseShuffle()" class="pause-button fas fa-pause-circle"></i>
+					<i onclick="playPauseShuffle()" class="play-button fas fa-play-circle"></i>
+					<i onclick="getAudio()" class="random-button fas fa-random"></i>
+				</div>
+
 			</div>
 		</div>
 
 	</div>
 
-	<audio id='audio' muted autoplay></audio>
+	<audio id='audio' autoplay></audio>
 
 	<script src="/static/js/navbar-overlay.js"></script>
 	<script src="/static/js/lofi.js"></script>
