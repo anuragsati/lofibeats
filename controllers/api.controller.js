@@ -49,9 +49,6 @@ const getLofiData = (req, res) => {
 }
 
 const getLofi  = (req, res) => {
-	// console.log(lofiNumber)
-	// console.log("==============")
-
 	// server random lofi
 	res.writeHead(200, {'Content-Type': 'audio/mp3'});
 	let opStream = fs.createReadStream(path.join(__dirname, '/public/lofi/' + data[lofiNumber].lofi_url));

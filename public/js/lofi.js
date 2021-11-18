@@ -38,11 +38,10 @@ audio.addEventListener("ended", function(){
 
 //get audio from backend and play it (which audio to play is defined on backend we just call that endpoint to get audio url)
 function getAudio(){
-	audio.src = '/api/lofi';
-
 	axios.get('/api/lofidata')
 	.then(res =>{
 		console.log(res.data);
+		audio.src = '/api/lofi';
 		lofiName.innerHTML = res.data.name;
 	});
 
