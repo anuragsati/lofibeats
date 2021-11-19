@@ -67,13 +67,11 @@ Some key features to note :
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Getting started with this project is very easy. Follown Prerequisites then installation guidelines.
-
 ### Prerequisites
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/anuragsati/lofibeats.git
+	git clone https://github.com/anuragsati/lofibeats.git
    ```
 
 1. Install npm packages
@@ -84,13 +82,13 @@ Getting started with this project is very easy. Follown Prerequisites then insta
 ### Installation
 
 1. Run the project using : 
-   ```sh
+	```sh
 	npm run start
    ```
-1. To Build the project : 
+<!-- 2. To Build the project : 
 	```sh
-	npm run build 
-	```
+	 npm run build 
+	``` -->
 
 <!-- LICENSE -->
 ## License
